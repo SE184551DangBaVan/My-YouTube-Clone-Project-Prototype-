@@ -1,0 +1,34 @@
+.resVideosContainer {
+    width: 100%;
+    height: 220px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.resVideosContainer .thumbnails {
+    min-width: 400px;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+}
+
+.resVideosContainer:hover .thumbnailImg {
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.resVideosContainer .titleCard {
+    width: 100%;
+    height: 30%;
+    background-color: var(--bg-color);
+    border-radius: 0 0 10px 10px;
+}
+
+.resVideosContainer .creatorpfp{
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+}

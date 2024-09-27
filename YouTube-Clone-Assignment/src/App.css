@@ -1,0 +1,606 @@
+#root {
+  min-width: 100%;
+  min-height: 100vmax;
+  text-align: center;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--side-menu-hover-color);
+    transition: all 0.3s ease;
+}
+
+.homeHeaderYT{
+  position: fixed;
+  z-index: 1000;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--bg-color);
+}
+
+.homeHeaderYT .iconAndLogo {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+  width: 400px;
+  height: 100%;
+  background-color: transparent;
+}
+
+.homeHeaderYT .headerIcon{
+  transform: scale(0.9);
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0;
+  border-radius: 50%;
+  border: none; outline: none;
+  color: var(--primary-text-color);
+}
+.homeHeaderYT .headerIcon:hover{ background-color: var(--side-menu-hover-color); }
+
+.homeHeaderYT .YTLogo {
+  height: 100%;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.homeHeaderYT .YTLogo .logoContain {
+  height: 65px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none; outline: none;
+  transform: translateX(-55px);
+}
+.homeHeaderYT .YTLogo .logoContain .logo {
+  padding: 0;
+  transform: scale(0.095);
+}
+
+.homeHeaderYT .searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 36%;
+  height: 100%;
+  transform: translateX(10%);
+}
+.homeHeaderYT .searchBar:focus-within {
+  width: 38%;
+  transform: translateX(4.4%);
+}
+
+.homeHeaderYT .searchInput {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border-radius: 20px;
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);;
+  outline: none;
+  color: var(--primary-text-color);
+}
+.homeHeaderYT .searchInput input{
+  width: 80%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 20px;
+  background-color: var(--secondary-bg-color);
+  border: none; outline: none;
+  color: var(--primary-text-color);
+  font-size: 16px;
+}
+
+.homeHeaderYT .searchInput input:focus-within::placeholder{ visibility: hidden;}
+.homeHeaderYT .searchInput input:focus-within{ margin-left: 30px; }
+.homeHeaderYT .searchInput:focus-within{border: 1px solid rgb(0, 132, 255);}
+
+.homeHeaderYT .searchBar .searchHistory{
+  position: absolute;
+  top: 90%;
+  width: 80%;
+  height: 0;
+  overflow-y: scroll;
+  background-color: var(--secondary-bg-color);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.homeHeaderYT .searchBar .searchHistory div{color: var(--primary-text-color); text-align: left; margin: 10px;}
+
+.homeHeaderYT .searchInput:focus-within .searchHistory{
+  min-height: 200px;
+  transition: all 0.3s ease;
+}
+
+.homeHeaderYT .searchBar .searchBtn:nth-child(1) { visibility: hidden; background-color: transparent; transform: translateX(-20%);}
+.homeHeaderYT .searchBar:focus-within .searchBtn:nth-child(1) { visibility: visible; margin-left: 0; transform: translateX(100%); }
+
+.homeHeaderYT .searchBar .searchBtn:nth-child(2) { border-radius: 0 48px 48px 0; height: 42px; width: 80px; display: flex; align-items: center; position: absolute; right: 0; margin-right: 46px; border: 1px solid var(--border-color);}
+.homeHeaderYT .searchBar .searchBtn:nth-child(2) > .MuiSvgIcon-root { width: 24px; height: 24px;}
+.homeHeaderYT .searchBar:focus-within .searchBtn:nth-child(3) { border-left: 1px solid rgb(0, 132, 255); }
+
+.homeHeaderYT .searchBtn, .homeHeaderYT .micBtn {
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 7.5%;
+  height: 68%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  position: relative;
+}
+
+.homeHeaderYT .searchBtn::after, .homeHeaderYT .micBtn::after {
+  z-index: -1;
+  content: '';
+  inset: -2px;
+  border-radius: inherit;
+  position: absolute;
+  display: unset;
+  background: conic-gradient(orangered var(--fill), transparent var(--fill));
+  transition: --fill 0.6s ease-in-out;
+}
+
+.homeHeaderYT .micBtn:hover {
+  color: orangered;
+  --fill: 100%;
+  transition: color 0.4s ease-in-out;
+}
+
+.homeHeaderYT .userUtility {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  margin: 10px 20px 0 0;
+}
+
+.homeHeaderYT .userUtility .uploadIcon,
+.homeHeaderYT .userUtility .notificationsIcon,
+.homeHeaderYT .userUtility .profileAvatar {
+  background-color: transparent;
+  position: relative;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  color: var(--primary-text-color);
+  background-color: var(--bg-color);
+  transition: color 0.4s ease-in-out;
+}
+
+.homeHeaderYT .userUtility .uploadIcon::after,
+.homeHeaderYT .userUtility .notificationsIcon::after,
+.homeHeaderYT .userUtility .profileAvatar::after {
+  z-index: -1;
+  content: '';
+  inset: -2px;
+  border-radius: inherit;
+  position: absolute;
+  display: unset;
+  background: conic-gradient(orangered var(--fill), transparent var(--fill));
+  transition: --fill 0.6s ease-in-out;
+}
+
+@property --fill {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 0%;
+}
+
+.homeHeaderYT .userUtility .uploadIcon:hover,
+.homeHeaderYT .userUtility .notificationsIcon:hover,
+.homeHeaderYT .userUtility .profileAvatar:hover {
+  color: orangered;
+  --fill: 100%;
+}
+
+.homeHeaderYT .profileAvatar > .MuiSvgIcon-root {
+  width: 30px;
+  height: 30px;
+}
+
+.homeHeaderYT .profileAction{
+  width: 100px;
+}
+
+.sideMenuContainer {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: 720px;
+  width: 240px;
+  background-color: var(--bg-color);
+  overflow-x: scroll;
+}
+
+.sideMenuContainer::-webkit-scrollbar {
+  width: 8px;
+}
+.sideMenuContainer::-webkit-scrollbar-track {
+  visibility: hidden;
+}.sideMenuContainer:hover::-webkit-scrollbar-track {visibility: visible;}
+.sideMenuContainer::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}.sideMenuContainer:hover::-webkit-scrollbar-thumb { visibility: visible; }
+
+.sideMenu {
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  width: 90%;
+  display: flex;
+  text-align: left;
+  justify-content: left;
+  margin: 0 0 0 12px;
+  padding: 0 5px;
+  border-bottom: 1px solid var(--primary-text-color);
+  transition: all 0.5s ease;
+  transition: background-color 1ms;
+}
+
+.sideTop{
+  color: var(--primary-text-color); 
+  width: 100%; padding: 0 0 10px 0; 
+  display: flex; flex-direction: column;
+}
+.sideTop button{
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  gap: 20px;
+  padding: 8px 15px;
+  color: var(--primary-text-color);
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.sideTop button:nth-child(1){
+  background-color: var(--side-menu-active-color);
+  border-radius: 10px;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.sideTop button:hover{
+  background-color: var(--side-menu-hover-color);
+  border-radius: 10px;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.sideMid {
+  color: var(--primary-text-color); 
+  width: 100%; padding: 10px 0 10px 0; 
+  display: flex; flex-direction: column;
+}
+.sideMid button{
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  gap: 20px;
+  padding: 8px 15px;
+  color: var(--primary-text-color);
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.sideMid button:hover{
+  background-color: var(--side-menu-hover-color);
+  border-radius: 10px;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.sideMid2 {
+  color: var(--primary-text-color); 
+  width: 100%; padding: 10px 0 10px 0; 
+  display: flex; flex-direction: column;
+}
+.sideMid2 button{
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  gap: 20px;
+  padding: 8px 15px;
+  color: var(--primary-text-color);
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.sideMid2 button:hover{
+  background-color: var(--side-menu-hover-color);
+  border-radius: 10px;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.sideMid2 p {
+  font-size: 16px;
+  margin-left: 15px;
+  font-weight: 500;
+}
+.sideMid2 button img{ transform: scale(1.01); }
+.sideMid2 button:nth-child(5) img{
+  transform: rotate(-15deg);
+}
+
+.sideBot {
+  color: var(--primary-text-color); 
+  width: 100%; padding: 10px 0 10px 0; 
+  display: flex; flex-direction: column;
+}
+.sideBot button{
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  gap: 20px;
+  padding: 8px 15px;
+  color: var(--primary-text-color);
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.sideBot button:hover{
+  background-color: var(--side-menu-hover-color);
+  border-radius: 10px;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.sideMenuContainer .sideMenuIcons{
+  height: 26px;
+}
+
+.sideMenuContainer .sideMenuIconsSm{
+  height: 12px;
+  margin-left: -15px;
+}
+
+.sideMenuContainerColapsed {
+  position: fixed;
+  bottom: 0;
+  height: 680px;
+  width: 160px;
+  background-color: var(--bg-color);
+  overflow-X: hidden;
+  overflow-y: hidden;
+}
+
+.sideMenuContainerColapsed .sideMenu {
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  width: 90%;
+  display: flex;
+  text-align: left;
+  justify-content: left;
+  margin: 0 0 0 12px;
+  padding: 0 5px;
+  border-bottom: none;
+  transition: all 0.3s ease;
+}
+
+.sideMenuContainerColapsed .sideTop{
+  color: var(--primary-text-color); 
+  width: 100%; padding: 0 0 10px 0; 
+  display: flex; flex-direction: column;
+}
+.sideMenuContainerColapsed .sideTop button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 55%;
+  height: 30%;
+  padding: 10px 15px;
+  color: var(--primary-text-color);
+  font-size: 10px;
+  transition: all 0.2s ease;
+}
+
+.sideMenuContainerColapsed .sideMid {
+  opacity: 0;
+}
+
+.sideMenuContainerColapsed .sideMenuIcons{
+  height: 26px;
+}
+
+.sideMenuContainerColapsed .sideMenuIconsSm{
+  visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  #root {
+    min-width: 100%;
+    height: 100vmax;
+    text-align: center;
+  }
+  
+  .app {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    scroll-behavior: smooth;
+    display: flex;
+  }
+
+  .homeHeaderYT {
+    position: fixed;
+    display: flex;
+    justify-content: right;
+    gap: 2%;
+  }
+
+  .homeHeaderYT .headerIcon{
+    display: none;
+  }
+
+  .homeHeaderYT .iconAndLogo {
+    width: 25%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+  }
+
+  .homeHeaderYT .YTLogo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+  }
+
+  .homeHeaderYT .YTLogo .logoContain {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    background-color: transparent;
+    border: none; outline: none;
+    transform: translateX(-40px);
+  }
+
+  .homeHeaderYT .searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 100%;
+    transform: translateX(10%);
+  }
+  .homeHeaderYT .searchBar .searchBtn:nth-child(1){
+    visibility: visible; margin-top: 10px;
+  }
+
+  .homeHeaderYT .searchBar .searchBtn:nth-child(3), .homeHeaderYT .searchBar .searchInput, .homeHeaderYT .searchBar .micBtn{
+    display: none;
+  }
+
+  .homeHeaderYT .userUtility {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    background-color: transparent;
+    position: unset;
+    margin: 10px 20px 0 0;
+  }
+
+  .sideMenuContainer .sideMenu:not(:first-child) {
+    display: none;
+  }
+
+  .sideMenuContainer {
+    width: 100%;
+    height: 8%;
+    bottom: -6.5px;
+    top: unset;
+    left: unset;
+    position: fixed;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    overflow: hidden;
+  }
+
+  .sideMenuContainer .sideMenu {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: unset;
+    text-align: unset;
+    justify-content: unset;
+  }
+  .sideMenuContainer .sideMenu .sideTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .sideMenu div {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .sideMenu .sideTop button {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: unset;
+    align-items: center;
+    justify-content: center;
+    background-color: unset;
+  }
+
+  .app .contentContainer {
+    width: 100%;
+  }
+
+  .videoContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contentContainer .topicsContainer {
+    padding: unset;
+    top: 18px;
+  }
+
+  .videoLists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

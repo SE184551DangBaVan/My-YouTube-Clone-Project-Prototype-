@@ -1,0 +1,36 @@
+.settingsContainer {
+    margin-top: 40px;
+    position: absolute;
+    width: 85%;
+    right: 0;
+    height: 100vmax;
+    display: flex;
+    background-color: var(--bg-color);
+}
+
+.settingsContainer .settingsContent {
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    margin: 40px 0 0 150px;
+    padding: 20px 50px;
+    border-radius: 10px;
+    background-color: var(--foreground-color);
+    box-shadow: 2px -2px 5px var(--side-menu-active-color);
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+}
+
+.settingsContainer .settingsChoices {
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary-text-color);
+}
+
+.settingsChoices .settingParam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
